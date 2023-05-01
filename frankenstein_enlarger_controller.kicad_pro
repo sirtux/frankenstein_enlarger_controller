@@ -56,7 +56,11 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "footprint_type_mismatch|163330000|107660000|d29cf9f8-d8cb-4631-b67f-a8ddcaea8dd2|00000000-0000-0000-0000-000000000000",
+        "missing_courtyard|159650000|132950000|ccd82874-eb30-4ca7-9bdc-1588018bf618|00000000-0000-0000-0000-000000000000",
+        "missing_courtyard|25900000|15125000|5fc24d2b-675b-4d9c-b9af-d289c5e94613|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -123,7 +127,7 @@
         "min_microvia_drill": 0.09999999999999999,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.7999999999999999,
+        "min_text_height": 0.5,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.19999999999999998,
         "min_track_width": 0.08889999999999999,
@@ -566,6 +570,10 @@
     [
       "a070d1c7-4928-4ffb-b06d-351ae78e3b54",
       "RS485"
+    ],
+    [
+      "7fa902f5-0c05-4243-b672-374d1d9765fc",
+      "BOB"
     ]
   ],
   "text_variables": {}

@@ -30,8 +30,8 @@
   (pad "2" thru_hole circle (at 3.795 5.115 270) (size 1.5 1.5) (drill 1) (layers "*.Cu" "*.Mask") (tstamp ee0955f4-51b8-42ee-9da8-71226a8a747f))
   (pad "3" thru_hole circle (at -3.825 5.115 270) (size 1.5 1.5) (drill 1) (layers "*.Cu" "*.Mask") (tstamp 02c3a060-706a-4258-9446-e4e6ad7a481a))
   (model "${KIPRJMOD}/library/3d/5501MBLKxxx.stp"
-    (offset (xyz 1.335 -1.175 0))
+    (offset (xyz -0.165 -0.175 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz 0 0 90))
   )
 )

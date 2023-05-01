@@ -1,4 +1,4 @@
-21685996789477692
+21692731217664459
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -13,6 +13,13 @@ audio belton reverb
 0
 7
 7
+BOB
+BOB5160
+
+
+0
+22
+22
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -90244,12 +90251,26 @@ eSwitch-5501M
 6
 5
 easyeda2kicad
+LED-SEG-TH_10P-L12.7-W19.0-P2.54-S15.24-BL
+
+
+0
+10
+10
+easyeda2kicad
 SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL
 
 
 0
 8
 8
+easyeda2kicad
+SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL
+
+
+0
+16
+16
 easyeda2kicad
 SOIC-20_L13.3-W5.5-P1.27-LS7.8-BL
 
@@ -90264,3 +90285,10 @@ SOT-363_L2.0-W1.3-P0.65-LS2.1-BR
 0
 6
 6
+easyeda2kicad
+SW-TH_ALPS_EC11L1525G01
+
+
+0
+7
+7

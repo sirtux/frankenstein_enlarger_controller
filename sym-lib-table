@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "${KIPRJMOD}/library/pico/MCU_RaspberryPi_and_Boards.kicad_sym")(options "")(descr ""))
   (lib (name "buttons")(type "KiCad")(uri "${KIPRJMOD}/library/buttons.kicad_sym")(options "")(descr ""))
+  (lib (name "BOB")(type "KiCad")(uri "${KIPRJMOD}/library/BOB.kicad_sym")(options "")(descr ""))
 )
