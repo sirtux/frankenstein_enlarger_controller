@@ -20,10 +20,10 @@ class FrankensteinController:
         self.pwm.duty_u16(63000)
 
         # Display options
-        self.display1 = {"value": 1, "blink": False}
-        self.display2 = {"value": 2, "blink": False}
-        self.display3 = {"value": 3, "blink": False}
-        self.display4 = {"value": 4, "blink": False}
+        self.display1 = {"value": 0, "blink": False}
+        self.display2 = {"value": 0, "blink": False}
+        self.display3 = {"value": 0, "blink": False}
+        self.display4 = {"value": 0, "blink": False}
 
         self.button1_led = {"value": False, "blink": False, "address": 8}
         self.button2_led = {"value": False, "blink": False, "address": 4}
@@ -187,4 +187,64 @@ class FrankensteinController:
                 
     def button_event(self, pin) -> None:
         self.logger.debug(f'Button Event occured on {pin}')
+
+class FrankensteinRotaryController(FrankensteinController):
+    def __init__(self) -> None:
+        super().__init__()
+        self.low_speed = True
+        self._set_speed_button()
+        
+    def _set_speed_button(self):
+        if self.low_speed:
+            self.button1_led['value'] = True
+            self.button2_led['value'] = False
+        else:
+            self.button1_led['value'] = False
+            self.button2_led['value'] = True
+
+        
+    def _update_display_value(self, display, value):
+        if display["value"] == 0:
+            pass
+        else:
+            display["value"] = display["value"] + value
+        
+    def rotary_event(self) -> None:
+        for rotary in [self.rotary_1, self.rotary_2, self.rotary_3, self.rotary_4]:
+            current_rotary_value = rotary.value()
+            if current_rotary_value != 0:
+                self.logger.debug(f'Encoder {rotary.id} value change: {current_rotary_value}')
+                rotary.set(value=0)
+                
+                if rotary.id == 1:
+                    self._update_display_value(self.display1, current_rotary_value)
+                if rotary.id == 2:
+                    self._update_display_value(self.display2, current_rotary_value)
+                if rotary.id == 3:
+                    self._update_display_value(self.display3, current_rotary_value)
+                if rotary.id == 4:
+                    self._update_display_value(self.display4, current_rotary_value)
+    def load_settings(self):
+        if self.display4['value'] == 0:
+            # We set a default if nothing in here
+            self.display1['value'] = 300
+            self.display2['value'] = 60
+            self.display3['value'] = 300
+            pass
+        else:
+            #TODO: Load a recipe from server
+            pass
+    def button_event(self, pin) -> None:
+        self.logger.debug(f'Button: {pin}')
+        if pin == "button1":
+            self.low_speed = True
+            self._set_speed_button()
+        if pin == "button2":
+            self.low_speed = False
+            self._set_speed_button()
+        if pin == "button3":
+            self.logger.debug(f'Label Button Event')
+        if pin == "button4":
+            self.logger.debug(f'Load Button Event')
+            self.load_settings()
 

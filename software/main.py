@@ -1,4 +1,4 @@
-from boardsupport.frankenstein_controller import FrankensteinController
+from boardsupport.frankenstein_controller import FrankensteinRotaryController
 import time
 import logging, sys
 
@@ -7,13 +7,22 @@ for handler in logging.getLogger().handlers:
     handler.setFormatter(logging.Formatter("[%(levelname)s]:%(name)s:%(message)s"))
 
 
-controller = FrankensteinController()
+controller = FrankensteinRotaryController()
 controller.reset()
 
-controller.button4_led["blink"] = True
-controller.button1_led["blink"] = True
-controller.button4_led["value"] = True
-controller.button1_led["value"] = True
-controller.display2["blink"] = True
-controller.display3["blink"] = True
-controller.display1["value"] = 0
+
+#from machine import Pin
+#from time import sleep_us, sleep_ms
+
+#en_pin = Pin(8, Pin.OUT)
+#en_pin.value(0)
+#step_pin = Pin(9, Pin.OUT)
+#dir_pin = Pin(10, Pin.OUT)
+
+
+#def step():
+#    i = 0
+#    while i < 200*16:
+#        step_pin.toggle()
+#        sleep_us(100)
+#        i = i+1
