@@ -4,6 +4,7 @@ import math
 from .rotary_irq_rp2 import RotaryIRQ
 import logging
 from .debounce import DebouncedSwitch
+from time import sleep_us
 
 class FrankensteinController:
     def __init__(self) -> None:
@@ -49,9 +50,8 @@ class FrankensteinController:
         self.rotary_3.add_listener(self.rotary_event)
         self.rotary_4.add_listener(self.rotary_event)
 
-
         # TODO: Buttons
-        
+
         self.rotary_1_button = DebouncedSwitch(Pin(27, Pin.IN, Pin.PULL_DOWN), None)
         self.rotary_1_button.callback(self.button_event, "rotary_1_button")
         self.rotary_2_button = DebouncedSwitch(Pin(13, Pin.IN, Pin.PULL_DOWN), None)
@@ -69,13 +69,10 @@ class FrankensteinController:
         self.button3.callback(self.button_event, "button3")
         self.button4 = DebouncedSwitch(Pin(15, Pin.IN, Pin.PULL_DOWN), None)
         self.button4.callback(self.button_event, "button4")
-        
-        
-        
-        # Timer based display rendering
-        timer1 = Timer()
-        timer1.init(period=100, callback=self.render_full_display)
 
+        # Timer based display rendering
+        self.display_timer = Timer()
+        self.display_timer.init(freq=10, callback=self.render_full_display)
 
     # Clear the display
     def reset(self) -> None:
@@ -179,43 +176,106 @@ class FrankensteinController:
 
     # Overwrite these functions in your base application
     def rotary_event(self) -> None:
-        self.logger.debug('Rotary Event occured')
+        self.logger.debug("Rotary Event occured")
         for rotary in [self.rotary_1, self.rotary_2, self.rotary_3, self.rotary_4]:
             if rotary.value() != 0:
-                self.logger.debug(f'Encoder {rotary.id} value change: {rotary.value()}')
+                self.logger.debug(f"Encoder {rotary.id} value change: {rotary.value()}")
                 rotary.set(value=0)
-                
+
     def button_event(self, pin) -> None:
-        self.logger.debug(f'Button Event occured on {pin}')
+        self.logger.debug(f"Button Event occured on {pin}")
+
 
 class FrankensteinRotaryController(FrankensteinController):
     def __init__(self) -> None:
         super().__init__()
         self.low_speed = True
+        self.step_timer = Timer()
         self._set_speed_button()
+        self.display_timer.deinit()
+        self.second_tick_timer = Timer()
+        self.second_tick_timer.init(period=100, callback=self._second_tick)
+        self.tick_counter = 0
+        self.rotary_1_button_latch = False
+        self.rotary_2_button_latch = False
+        self.rotary_3_button_latch = False
+        self.rotary_4_button_latch = False
+        self.stepper_steps = 0
+        self.en_pin = Pin(8, Pin.OUT)
+        self.en_pin.value(1)
+        self.step_pin = Pin(9, Pin.OUT)
+        self.dir_pin = Pin(10, Pin.OUT)
+
+    def _second_tick(self, timer):
+        self.render_full_display(timer)
+        if self.tick_counter == 9:
+            self.tick_counter = 0
+            if self.rotary_1_button_latch and self.display1["value"] > 0:
+                self.display1["value"] = self.display1["value"] - 1
+                if self.display1["value"]==0:
+                    self.rotary_1_button_latch = False
+            if self.rotary_2_button_latch and self.display2["value"] > 0:
+                self.display2["value"] = self.display2["value"] - 1
+                if self.display2["value"]==0:
+                    self.rotary_2_button_latch = False
+            if self.rotary_3_button_latch and self.display3["value"] > 0:
+                self.display3["value"] = self.display3["value"] - 1
+                if self.display3["value"]==0:
+                    self.rotary_3_button_latch = False
+        self.tick_counter = self.tick_counter+1
         
     def _set_speed_button(self):
         if self.low_speed:
-            self.button1_led['value'] = True
-            self.button2_led['value'] = False
+            self.button1_led["value"] = True
+            self.button2_led["value"] = False
+            self.step_timer.init(freq=400, callback = self._rotate)
         else:
-            self.button1_led['value'] = False
-            self.button2_led['value'] = True
+            self.button1_led["value"] = False
+            self.button2_led["value"] = True
+            self.step_timer.init(freq=800, callback = self._rotate)
 
-        
+    def _rotate(self, timer):
+        if self.rotary_1_button_latch or self.rotary_2_button_latch or self.rotary_3_button_latch:
+            #Enable stepper driver
+            self.en_pin.value(0)
+            if self.stepper_steps < 200*8*0.75:
+                self.dir_pin.value(0)
+                self.stepper_steps = self.stepper_steps + 1
+                self.step_pin.value(1)
+                sleep_us(1)
+                self.step_pin.value(0)
+                sleep_us(1)
+            elif self.stepper_steps >= 200*8*0.75:
+                self.dir_pin.value(1)
+                self.stepper_steps = self.stepper_steps + 1
+                self.step_pin.value(1)
+                sleep_us(1)
+                self.step_pin.value(0)
+                sleep_us(1)
+                if self.stepper_steps > (200*8*0.75)+(200*8*0.3):
+                    sleep_us(1000)
+                    self.stepper_steps = 0
+        else:
+            #Disable stepper driver
+            self.en_pin.value(1)
+            self.stepper_steps = 0
+        return None
+            
     def _update_display_value(self, display, value):
-        if display["value"] == 0:
+        if display["value"] == 0 and value < 0:
             pass
         else:
             display["value"] = display["value"] + value
-        
+
     def rotary_event(self) -> None:
         for rotary in [self.rotary_1, self.rotary_2, self.rotary_3, self.rotary_4]:
             current_rotary_value = rotary.value()
             if current_rotary_value != 0:
-                self.logger.debug(f'Encoder {rotary.id} value change: {current_rotary_value}')
+                self.logger.debug(
+                    f"Encoder {rotary.id} value change: {current_rotary_value}"
+                )
                 rotary.set(value=0)
-                
+
                 if rotary.id == 1:
                     self._update_display_value(self.display1, current_rotary_value)
                 if rotary.id == 2:
@@ -224,27 +284,67 @@ class FrankensteinRotaryController(FrankensteinController):
                     self._update_display_value(self.display3, current_rotary_value)
                 if rotary.id == 4:
                     self._update_display_value(self.display4, current_rotary_value)
+
     def load_settings(self):
-        if self.display4['value'] == 0:
+        if self.display4["value"] == 0:
             # We set a default if nothing in here
-            self.display1['value'] = 300
-            self.display2['value'] = 60
-            self.display3['value'] = 300
+            self.display1["value"] = 300
+            self.display2["value"] = 60
+            self.display3["value"] = 300
             pass
         else:
-            #TODO: Load a recipe from server
+            # TODO: Load a recipe from server
             pass
+
     def button_event(self, pin) -> None:
-        self.logger.debug(f'Button: {pin}')
+        self.logger.debug(f"Button: {pin}")
         if pin == "button1":
             self.low_speed = True
             self._set_speed_button()
+            return None
         if pin == "button2":
             self.low_speed = False
             self._set_speed_button()
+            return None
         if pin == "button3":
-            self.logger.debug(f'Label Button Event')
+            self.logger.debug(f"Label Button Event")
+            return None
         if pin == "button4":
-            self.logger.debug(f'Load Button Event')
+            self.logger.debug(f"Load Button Event")
             self.load_settings()
-
+            return None
+        if pin == "rotary_1_button":
+            if self.rotary_1_button_latch:
+                self.rotary_1_button_latch = False
+                return None
+            if (
+                self.rotary_2_button_latch
+                or self.rotary_3_button_latch
+            ):
+                self.logger.debug(f"Tried to enable {pin}, but another latch is active")
+            else:
+                self.rotary_1_button_latch = True
+   
+        if pin == "rotary_2_button":
+            if self.rotary_2_button_latch:
+                self.rotary_2_button_latch = False
+                return None
+            if (
+                self.rotary_1_button_latch
+                or self.rotary_3_button_latch
+            ):
+                self.logger.debug(f"Tried to enable {pin}, but another latch is active")
+            else:
+                self.rotary_2_button_latch = True
+                
+        if pin == "rotary_3_button":
+            if self.rotary_3_button_latch:
+                self.rotary_3_button_latch = False
+                return None
+            if (
+                self.rotary_1_button_latch
+                or self.rotary_2_button_latch
+            ):
+                self.logger.debug(f"Tried to enable {pin}, but another latch is active")
+            else:
+                self.rotary_3_button_latch = True

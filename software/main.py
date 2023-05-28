@@ -1,28 +1,31 @@
 from boardsupport.frankenstein_controller import FrankensteinRotaryController
 import time
 import logging, sys
+import micropython
+import network
+import json
+import webrepl
 
+# Set up logging
 logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 for handler in logging.getLogger().handlers:
     handler.setFormatter(logging.Formatter("[%(levelname)s]:%(name)s:%(message)s"))
 
+# Exception buffer for interrupt exceptions et al
+micropython.alloc_emergency_exception_buf(100)
 
-controller = FrankensteinRotaryController()
-controller.reset()
+if __name__ == "__main__":
+    # Set up the board
+    controller = FrankensteinRotaryController()
+    controller.reset()
 
+    # Enable WIFI and WebREPL
+    config_file = open("config.json")
+    config = json.load(config_file)
 
-#from machine import Pin
-#from time import sleep_us, sleep_ms
+    wlan = network.WLAN(network.STA_IF)
+    network.hostname("rotary")
+    wlan.active(True)
+    wlan.connect(config['ssid'], config['wlanpw'])
+    #webrepl.start(password=config['webrepl_pw'])
 
-#en_pin = Pin(8, Pin.OUT)
-#en_pin.value(0)
-#step_pin = Pin(9, Pin.OUT)
-#dir_pin = Pin(10, Pin.OUT)
-
-
-#def step():
-#    i = 0
-#    while i < 200*16:
-#        step_pin.toggle()
-#        sleep_us(100)
-#        i = i+1
