@@ -4,4 +4,5 @@
   (lib (name "ToolingHole")(type "KiCad")(uri "${KIPRJMOD}/library/ToolingHole.pretty")(options "")(descr ""))
   (lib (name "eSwitch-5501M")(type "KiCad")(uri "${KIPRJMOD}/library/eSwitch-5501M.pretty")(options "")(descr ""))
   (lib (name "BOB")(type "KiCad")(uri "${KIPRJMOD}/library/eSwitch-5501M.pretty/BOB.pretty")(options "")(descr ""))
+  (lib (name "frankenlogo")(type "KiCad")(uri "${KIPRJMOD}/library/frankenlogo.pretty")(options "")(descr ""))
 )

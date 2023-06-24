@@ -4,7 +4,7 @@ import math
 from .rotary_irq_rp2 import RotaryIRQ
 import logging
 from .debounce import DebouncedSwitch
-from time import sleep_us
+from time import sleep_us, sleep
 
 class FrankensteinController:
     def __init__(self) -> None:
@@ -70,7 +70,6 @@ class FrankensteinController:
         self.button4 = DebouncedSwitch(Pin(15, Pin.IN, Pin.PULL_DOWN), None)
         self.button4.callback(self.button_event, "button4")
 
-        # Timer based display rendering
         self.display_timer = Timer()
         self.display_timer.init(freq=10, callback=self.render_full_display)
 
@@ -205,10 +204,13 @@ class FrankensteinRotaryController(FrankensteinController):
         self.en_pin.value(1)
         self.step_pin = Pin(9, Pin.OUT)
         self.dir_pin = Pin(10, Pin.OUT)
-
+        self.noop_begin = 0
+        self.noop_seconds = 2
+        self.noop_active = False
+        
     def _second_tick(self, timer):
         self.render_full_display(timer)
-        if self.tick_counter == 9:
+        if self.tick_counter == 10:
             self.tick_counter = 0
             if self.rotary_1_button_latch and self.display1["value"] > 0:
                 self.display1["value"] = self.display1["value"] - 1
@@ -245,7 +247,10 @@ class FrankensteinRotaryController(FrankensteinController):
                 sleep_us(1)
                 self.step_pin.value(0)
                 sleep_us(1)
-            elif self.stepper_steps >= 200*8*0.75:
+            elif self.stepper_steps == 200*8*0.75:
+                sleep(1)
+                self.stepper_steps = self.stepper_steps + 1
+            elif self.stepper_steps > 200*8*0.75:
                 self.dir_pin.value(1)
                 self.stepper_steps = self.stepper_steps + 1
                 self.step_pin.value(1)
@@ -253,8 +258,13 @@ class FrankensteinRotaryController(FrankensteinController):
                 self.step_pin.value(0)
                 sleep_us(1)
                 if self.stepper_steps > (200*8*0.75)+(200*8*0.3):
-                    sleep_us(1000)
-                    self.stepper_steps = 0
+                    if self.noop_active:
+                        if self.noop_begin == time.time() - self.noop_seconds:
+                            self_noop_active = False
+                            self.stepper_steps = 0
+                        else:
+                            self_noop_active = True
+                            
         else:
             #Disable stepper driver
             self.en_pin.value(1)
