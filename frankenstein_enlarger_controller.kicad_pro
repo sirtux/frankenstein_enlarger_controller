@@ -516,64 +516,88 @@
       ""
     ],
     [
-      "55f6afa5-62b9-461b-980c-29f2507c27aa",
+      "87024c5e-1906-4e6c-9009-a1f03b5491a5",
+      "PicoAssembly1"
+    ],
+    [
+      "96bfd3bf-47fc-43b7-a297-8dd1728b1ef6",
       "Digit1"
     ],
     [
-      "74017761-852b-4a67-a73a-384c7ae1b11d",
+      "0458e3b4-98d4-4a8e-8bf8-4df735c48872",
+      "USB-C"
+    ],
+    [
+      "3a95c809-e4a5-4bd8-b885-70fcd33f5c5f",
       "Digit2"
     ],
     [
-      "1e9be415-eb92-497f-9263-850b7b93a4ab",
+      "61d65aec-0093-47c2-b486-3daec7f3c1ea",
+      "USB-C-PD"
+    ],
+    [
+      "0e45fa4e-7bf6-4b5a-ad16-759fd978d300",
       "Digit3"
     ],
     [
-      "c1a8136b-9cb6-4f36-8ce9-2721109dd4f7",
+      "782c5b9e-53cb-4460-9ae2-94b05b40260b",
+      "StepDown"
+    ],
+    [
+      "e9f4595e-5dc7-4f9f-b295-00f81bccb5e6",
       "Digit4"
     ],
     [
-      "9389ee06-dfb9-4249-9c4f-c8a66aa6a24c",
+      "41aaa7cd-a96b-4bde-9be7-e7dff86ad3c6",
+      "USB-Hub"
+    ],
+    [
+      "25d199a9-36f3-4a21-b06a-3cf469daf5f8",
+      "UI_Assembly"
+    ],
+    [
+      "280eb560-659a-4b45-a382-711d8ff32000",
       "Digit5"
     ],
     [
-      "4003f629-c723-4d23-9d12-cd519ab0481d",
+      "94a1c93d-a618-4217-8a4c-88846e1e72d9",
       "Digit6"
     ],
     [
-      "8d006ec2-afe0-42de-a883-aed4acd0829f",
+      "bb6febe7-6958-4cb0-94b2-d232c8beceb8",
+      "StepperDriverAssembly"
+    ],
+    [
+      "b3187e3d-971a-4265-92f2-a2c5b1354635",
       "Digit7"
     ],
     [
-      "b8987298-b5b5-4713-9d46-5df4573be222",
+      "03042391-715b-4945-bae1-da67bdafa7fe",
+      "PicoAssembly2"
+    ],
+    [
+      "7b37e95f-9818-4d93-ba3c-8ce087649a2f",
       "Digit8"
     ],
     [
-      "5611d05a-5b89-4a47-ab66-40b797e282db",
+      "a2a28d4e-4eef-4142-9535-725c86463c32",
       "Digit9"
     ],
     [
-      "f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5",
+      "b9fdb02f-cc68-4f47-85ba-d9ac18161f29",
       "Digit10"
     ],
     [
-      "2743800b-e1c0-48f1-b03d-216ce586702a",
+      "7cc6caea-b75f-4dbd-adaf-ae57b091da50",
       "Digit11"
     ],
     [
-      "b5391402-ad66-4b68-9324-70ad6888356e",
+      "488a13f2-4ea4-4318-b37d-708d5f2c5313",
       "Digit12"
     ],
     [
-      "82721b24-900b-41a1-b6f1-5534d2b77259",
+      "c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56",
       "Input Devices"
-    ],
-    [
-      "a070d1c7-4928-4ffb-b06d-351ae78e3b54",
-      "RS485"
-    ],
-    [
-      "7fa902f5-0c05-4243-b672-374d1d9765fc",
-      "BOB"
     ]
   ],
   "text_variables": {}

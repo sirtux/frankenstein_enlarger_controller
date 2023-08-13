@@ -4,6 +4,11 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Frankenstein Controller")
+    (company "wirkbetrieb.net / Tom Eichhorn")
+  )
+
   (lib_symbols
     (symbol "74xx:74HC595" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -7.62 13.97 0)
@@ -1011,8 +1016,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0161") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR023") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0153") (unit 1)
         )
       )
     )
@@ -1021,10 +1026,10 @@
   (symbol (lib_id "Device:R") (at 97.79 119.38 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0f85b1a6-5d11-47bf-aaf1-411340f887a1)
-    (property "Reference" "R3" (at 102.87 120.65 90)
+    (property "Reference" "R139" (at 102.87 120.65 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "120" (at 97.79 119.38 90)
+    (property "Value" "R" (at 97.79 119.38 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 117.602 90)
@@ -1040,44 +1045,8 @@
     (pin "2" (uuid e8402148-3a51-4ec5-ace6-88ac442a24fb))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "R3") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "R11") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "R19") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "R27") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "R35") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "R43") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "R51") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "R59") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "R67") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "R84") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "R92") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "R100") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R111") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R139") (unit 1)
         )
       )
     )
@@ -1086,7 +1055,7 @@
   (symbol (lib_id "power:GND") (at 45.72 123.19 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 14460de6-ea3b-46b0-80bb-ad5a5f32a2e7)
-    (property "Reference" "#PWR048" (at 39.37 123.19 0)
+    (property "Reference" "#PWR0168" (at 39.37 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 41.91 123.825 90)
@@ -1101,8 +1070,8 @@
     (pin "1" (uuid 849870b5-4d89-4ea3-b9c4-ad9f008565db))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR048") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0168") (unit 1)
         )
       )
     )
@@ -1114,7 +1083,7 @@
     (property "Reference" "R79" (at 157.48 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 158.75 26.67 90)
+    (property "Value" "R" (at 158.75 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 158.75 28.448 90)
@@ -1133,8 +1102,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R79") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R79") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R130") (unit 1)
         )
       )
     )
@@ -1168,8 +1137,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "SW3") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW4") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW8") (unit 1)
         )
       )
     )
@@ -1178,7 +1147,7 @@
   (symbol (lib_id "buttons:E-SWITCH 5501M") (at 52.07 124.46 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23e37d3f-b26f-4c38-8474-05082ee21cad)
-    (property "Reference" "SW6" (at 53.975 106.68 0)
+    (property "Reference" "SW10" (at 53.975 106.68 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "E-SWITCH 5501M" (at 53.975 109.22 0)
@@ -1197,8 +1166,8 @@
     (pin "3" (uuid c0ede3a2-2198-403a-9f08-da73740f3b62))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW6") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW10") (unit 1)
         )
       )
     )
@@ -1210,7 +1179,7 @@
     (property "Reference" "R81" (at 68.58 57.15 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 69.85 54.61 90)
+    (property "Value" "R" (at 69.85 54.61 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 69.85 56.388 90)
@@ -1229,8 +1198,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R81") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R108") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R136") (unit 1)
         )
       )
     )
@@ -1239,7 +1208,7 @@
   (symbol (lib_id "power:GND") (at 45.72 147.32 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 31da2787-936b-4e59-8a06-f7b566c6dd3a)
-    (property "Reference" "#PWR049" (at 39.37 147.32 0)
+    (property "Reference" "#PWR0172" (at 39.37 147.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 41.91 147.955 90)
@@ -1254,8 +1223,8 @@
     (pin "1" (uuid b2ca00e1-abbb-4347-ba09-9e5c3cacebc8))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR049") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0172") (unit 1)
         )
       )
     )
@@ -1282,8 +1251,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0164") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR030") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0147") (unit 1)
         )
       )
     )
@@ -1292,7 +1261,7 @@
   (symbol (lib_id "buttons:E-SWITCH 5501M") (at 52.07 148.59 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 35a81d34-c0a1-4da4-ac8a-19522c9c0610)
-    (property "Reference" "SW7" (at 53.975 130.81 0)
+    (property "Reference" "SW11" (at 53.975 130.81 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "E-SWITCH 5501M" (at 53.975 133.35 0)
@@ -1311,8 +1280,8 @@
     (pin "3" (uuid b6bf9e79-3460-4a82-aac8-0b0679cb64d0))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW7") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW11") (unit 1)
         )
       )
     )
@@ -1324,7 +1293,7 @@
     (property "Reference" "R75" (at 68.58 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 69.85 26.67 90)
+    (property "Value" "R" (at 69.85 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 69.85 28.448 90)
@@ -1343,8 +1312,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R75") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R75") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R127") (unit 1)
         )
       )
     )
@@ -1356,7 +1325,7 @@
     (property "Reference" "R80" (at 157.48 34.29 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 158.75 31.75 90)
+    (property "Value" "R" (at 158.75 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 158.75 33.528 90)
@@ -1375,8 +1344,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R80") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R80") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R134") (unit 1)
         )
       )
     )
@@ -1388,7 +1357,7 @@
     (property "Reference" "R80" (at 38.1 62.23 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 39.37 59.69 90)
+    (property "Value" "R" (at 39.37 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 39.37 61.468 90)
@@ -1407,8 +1376,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R80") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R107") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R137") (unit 1)
         )
       )
     )
@@ -1435,8 +1404,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0158") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR025") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0145") (unit 1)
         )
       )
     )
@@ -1463,8 +1432,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0163") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR037") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0160") (unit 1)
         )
       )
     )
@@ -1491,8 +1460,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0156") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR029") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0146") (unit 1)
         )
       )
     )
@@ -1504,7 +1473,7 @@
     (property "Reference" "R74" (at 38.1 34.29 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 39.37 31.75 90)
+    (property "Value" "R" (at 39.37 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 39.37 33.528 90)
@@ -1523,8 +1492,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R74") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R74") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R132") (unit 1)
         )
       )
     )
@@ -1533,10 +1502,10 @@
   (symbol (lib_id "Device:R") (at 97.79 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 45af2910-cdb8-40a6-b235-763e1b8d874f)
-    (property "Reference" "R4" (at 102.87 118.11 90)
+    (property "Reference" "R138" (at 102.87 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "120" (at 97.79 116.84 90)
+    (property "Value" "R" (at 97.79 116.84 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 115.062 90)
@@ -1552,44 +1521,8 @@
     (pin "2" (uuid 21c24975-3159-4e57-b76a-43526e80fa95))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "R4") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "R12") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "R20") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "R28") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "R36") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "R44") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "R52") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "R60") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "R68") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "R85") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "R93") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "R101") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R112") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R138") (unit 1)
         )
       )
     )
@@ -1598,7 +1531,7 @@
   (symbol (lib_id "power:+3.3V") (at 45.72 92.71 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4da3c1b1-6852-4f57-a7fc-7d48f8a9105d)
-    (property "Reference" "#PWR052" (at 49.53 92.71 0)
+    (property "Reference" "#PWR0163" (at 49.53 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 41.91 93.345 90)
@@ -1613,8 +1546,8 @@
     (pin "1" (uuid 4a56faf3-36db-4a48-bdd2-19a154f520c3))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR052") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0163") (unit 1)
         )
       )
     )
@@ -1626,7 +1559,7 @@
     (property "Reference" "R77" (at 96.52 34.29 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 97.79 31.75 90)
+    (property "Value" "R" (at 97.79 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 33.528 90)
@@ -1645,8 +1578,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R77") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R77") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R133") (unit 1)
         )
       )
     )
@@ -1673,8 +1606,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0164") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR035") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0158") (unit 1)
         )
       )
     )
@@ -1683,7 +1616,7 @@
   (symbol (lib_id "power:+3.3V") (at 45.72 116.84 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 529ff658-4b1b-488b-99cf-0e33285cc429)
-    (property "Reference" "#PWR040" (at 49.53 116.84 0)
+    (property "Reference" "#PWR0166" (at 49.53 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 41.91 117.475 90)
@@ -1698,8 +1631,8 @@
     (pin "1" (uuid ac021f8f-e5c6-44e4-ae10-6ab2fad04bd8))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR040") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0166") (unit 1)
         )
       )
     )
@@ -1711,7 +1644,7 @@
     (property "Reference" "R73" (at 38.1 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 39.37 26.67 90)
+    (property "Value" "R" (at 39.37 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 39.37 28.448 90)
@@ -1730,8 +1663,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R73") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R73") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R126") (unit 1)
         )
       )
     )
@@ -1765,8 +1698,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "SW1") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW1") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW5") (unit 1)
         )
       )
     )
@@ -1793,8 +1726,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0160") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR024") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0144") (unit 1)
         )
       )
     )
@@ -1803,7 +1736,7 @@
   (symbol (lib_id "power:+3.3V") (at 124.46 129.54 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6140f117-4cc6-4bfd-b13e-ff10af054f14)
-    (property "Reference" "#PWR0101" (at 124.46 125.73 0)
+    (property "Reference" "#PWR0169" (at 124.46 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 124.46 134.62 0)
@@ -1818,44 +1751,8 @@
     (pin "1" (uuid 1230946c-fe61-485f-887b-50427aaeebbe))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "#PWR0101") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "#PWR0107") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "#PWR0113") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "#PWR0119") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "#PWR0125") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "#PWR0131") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "#PWR0137") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "#PWR0143") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "#PWR0149") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "#PWR03") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "#PWR09") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "#PWR015") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR045") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0169") (unit 1)
         )
       )
     )
@@ -1889,8 +1786,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "SW2") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW2") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW6") (unit 1)
         )
       )
     )
@@ -1899,7 +1796,7 @@
   (symbol (lib_id "74xx:74HC595") (at 124.46 114.3 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 699f6343-1a77-480d-882d-171709a3c706)
-    (property "Reference" "U2" (at 122.4406 132.08 0)
+    (property "Reference" "U33" (at 122.4406 132.08 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "74HC595" (at 122.4406 129.54 0)
@@ -1932,44 +1829,8 @@
     (pin "9" (uuid b9dd48d1-8258-472a-aeba-9a4cd24de615))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "U2") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "U4") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "U6") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "U8") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "U10") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "U12") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "U14") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "U16") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "U18") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "U20") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "U22") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "U24") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "U26") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "U33") (unit 1)
         )
       )
     )
@@ -1996,8 +1857,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0162") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR031") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0156") (unit 1)
         )
       )
     )
@@ -2006,7 +1867,7 @@
   (symbol (lib_id "power:GND") (at 124.46 96.52 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6b9b99c1-e5e9-48f0-a014-88c849bf05d2)
-    (property "Reference" "#PWR0102" (at 124.46 90.17 0)
+    (property "Reference" "#PWR0164" (at 124.46 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 124.46 91.44 0)
@@ -2021,44 +1882,8 @@
     (pin "1" (uuid 319ec9e6-efe2-47f3-acf4-7387e064baca))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "#PWR0102") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "#PWR0108") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "#PWR0114") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "#PWR0120") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "#PWR0126") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "#PWR0132") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "#PWR0138") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "#PWR0144") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "#PWR0150") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "#PWR04") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "#PWR010") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "#PWR016") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR046") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0164") (unit 1)
         )
       )
     )
@@ -2092,8 +1917,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "SW3") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW3") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW7") (unit 1)
         )
       )
     )
@@ -2105,7 +1930,7 @@
     (property "Reference" "R79" (at 38.1 57.15 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 39.37 54.61 90)
+    (property "Value" "R" (at 39.37 54.61 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 39.37 56.388 90)
@@ -2124,8 +1949,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R79") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R106") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R135") (unit 1)
         )
       )
     )
@@ -2152,8 +1977,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0166") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR034") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0148") (unit 1)
         )
       )
     )
@@ -2162,7 +1987,7 @@
   (symbol (lib_id "power:GND") (at 135.89 137.16 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 733f9f97-bd05-49a9-b4be-37ba6ab7aec8)
-    (property "Reference" "#PWR051" (at 135.89 143.51 0)
+    (property "Reference" "#PWR0170" (at 135.89 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 135.89 142.24 0)
@@ -2177,8 +2002,8 @@
     (pin "1" (uuid 42d88400-96c6-4574-9aa5-0dc7a39c3840))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR051") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0170") (unit 1)
         )
       )
     )
@@ -2205,8 +2030,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0165") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR033") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0157") (unit 1)
         )
       )
     )
@@ -2233,8 +2058,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0169") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR022") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0149") (unit 1)
         )
       )
     )
@@ -2243,7 +2068,7 @@
   (symbol (lib_id "power:GND") (at 45.72 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 86dc0519-bf67-43cc-9cc9-0183c1c8792d)
-    (property "Reference" "#PWR047" (at 39.37 99.06 0)
+    (property "Reference" "#PWR0165" (at 39.37 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 41.91 99.695 90)
@@ -2258,8 +2083,8 @@
     (pin "1" (uuid a1919e19-98d4-4342-b2f9-9ecfdeff4778))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR047") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0165") (unit 1)
         )
       )
     )
@@ -2268,10 +2093,10 @@
   (symbol (lib_id "Device:R") (at 97.79 121.92 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8a0d7f12-c9f8-4fbc-9475-eded59e24ab8)
-    (property "Reference" "R2" (at 102.87 123.19 90)
+    (property "Reference" "R140" (at 102.87 123.19 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "120" (at 97.79 121.92 90)
+    (property "Value" "R" (at 97.79 121.92 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 120.142 90)
@@ -2287,44 +2112,8 @@
     (pin "2" (uuid d7383334-73ad-43ff-9e56-33d6421312a9))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "R2") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "R10") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "R18") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "R26") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "R34") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "R42") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "R50") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "R58") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "R66") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "R83") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "R91") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "R99") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R110") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R140") (unit 1)
         )
       )
     )
@@ -2336,7 +2125,7 @@
     (property "Reference" "R76" (at 96.52 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 97.79 26.67 90)
+    (property "Value" "R" (at 97.79 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 28.448 90)
@@ -2355,8 +2144,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R76") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R76") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R128") (unit 1)
         )
       )
     )
@@ -2383,8 +2172,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0163") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR032") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0151") (unit 1)
         )
       )
     )
@@ -2411,8 +2200,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0162") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR036") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0161") (unit 1)
         )
       )
     )
@@ -2421,7 +2210,7 @@
   (symbol (lib_id "power:+3.3V") (at 45.72 165.1 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9180791a-b1ae-4a39-992b-fc5c772567f7)
-    (property "Reference" "#PWR042" (at 49.53 165.1 0)
+    (property "Reference" "#PWR0173" (at 49.53 165.1 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 41.91 165.735 90)
@@ -2436,8 +2225,8 @@
     (pin "1" (uuid 0133c6c9-bffa-4a7e-8beb-89f3ee70466e))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR042") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0173") (unit 1)
         )
       )
     )
@@ -2446,10 +2235,10 @@
   (symbol (lib_id "Device:C") (at 135.89 133.35 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9cf78c30-d896-4c8b-b1b8-9cacbb83bcbc)
-    (property "Reference" "C1" (at 139.7 132.715 0)
+    (property "Reference" "C59" (at 139.7 132.715 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "100n" (at 139.7 135.255 0)
+    (property "Value" "C" (at 139.7 135.255 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 134.9248 129.54 0)
@@ -2465,44 +2254,8 @@
     (pin "2" (uuid d0660467-adfa-4bd1-a040-0e6e8a424334))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "C1") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "C2") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "C3") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "C4") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "C5") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "C6") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "C7") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "C8") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "C9") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "C10") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "C11") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "C12") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "C13") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "C59") (unit 1)
         )
       )
     )
@@ -2511,7 +2264,7 @@
   (symbol (lib_id "buttons:E-SWITCH 5501M") (at 52.07 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9d766302-ca3d-4e6a-9a18-8d50f0dec161)
-    (property "Reference" "SW8" (at 53.975 154.94 0)
+    (property "Reference" "SW12" (at 53.975 154.94 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "E-SWITCH 5501M" (at 53.975 157.48 0)
@@ -2530,8 +2283,8 @@
     (pin "3" (uuid 64e75819-3c24-4225-808b-dd9a6dff6d92))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW8") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW12") (unit 1)
         )
       )
     )
@@ -2558,8 +2311,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0167") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR020") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0143") (unit 1)
         )
       )
     )
@@ -2586,8 +2339,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0165") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR038") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0162") (unit 1)
         )
       )
     )
@@ -2614,8 +2367,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0159") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR026") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0154") (unit 1)
         )
       )
     )
@@ -2642,8 +2395,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0155") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR028") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0155") (unit 1)
         )
       )
     )
@@ -2652,10 +2405,10 @@
   (symbol (lib_id "Device:R") (at 97.79 124.46 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bfe83e64-3375-4ae8-bd1d-7a5758df3394)
-    (property "Reference" "R1" (at 102.87 125.73 90)
+    (property "Reference" "R141" (at 102.87 125.73 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "120" (at 97.79 124.46 90)
+    (property "Value" "R" (at 97.79 124.46 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 97.79 122.682 90)
@@ -2671,44 +2424,8 @@
     (pin "2" (uuid 64844c91-efde-4bf6-a1ca-64e65d7e4b86))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "R1") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "R9") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "R17") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "R25") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "R33") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "R41") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "R49") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "R57") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "R65") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "R82") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "R90") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "R98") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R109") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R141") (unit 1)
         )
       )
     )
@@ -2720,7 +2437,7 @@
     (property "Reference" "R78" (at 127 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 128.27 26.67 90)
+    (property "Value" "R" (at 128.27 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 128.27 28.448 90)
@@ -2739,8 +2456,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R78") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R78") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R129") (unit 1)
         )
       )
     )
@@ -2767,8 +2484,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0166") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR039") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0159") (unit 1)
         )
       )
     )
@@ -2777,7 +2494,7 @@
   (symbol (lib_id "power:+3.3V") (at 140.97 116.84 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid deab6249-a7c9-42f0-9a97-195d48a0bdea)
-    (property "Reference" "#PWR0106" (at 137.16 116.84 0)
+    (property "Reference" "#PWR0167" (at 137.16 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 149.86 116.84 90)
@@ -2792,44 +2509,8 @@
     (pin "1" (uuid 8e453c6e-17b6-4f4c-a6d6-075402637808))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/55f6afa5-62b9-461b-980c-29f2507c27aa"
-          (reference "#PWR0106") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/74017761-852b-4a67-a73a-384c7ae1b11d"
-          (reference "#PWR0112") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/1e9be415-eb92-497f-9263-850b7b93a4ab"
-          (reference "#PWR0118") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/c1a8136b-9cb6-4f36-8ce9-2721109dd4f7"
-          (reference "#PWR0124") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/9389ee06-dfb9-4249-9c4f-c8a66aa6a24c"
-          (reference "#PWR0130") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/4003f629-c723-4d23-9d12-cd519ab0481d"
-          (reference "#PWR0136") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/8d006ec2-afe0-42de-a883-aed4acd0829f"
-          (reference "#PWR0142") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b8987298-b5b5-4713-9d46-5df4573be222"
-          (reference "#PWR0148") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/5611d05a-5b89-4a47-ab66-40b797e282db"
-          (reference "#PWR0154") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/f1a4b886-f6b3-4f92-b1d6-eae24c2d51d5"
-          (reference "#PWR02") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/2743800b-e1c0-48f1-b03d-216ce586702a"
-          (reference "#PWR08") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/b5391402-ad66-4b68-9324-70ad6888356e"
-          (reference "#PWR014") (unit 1)
-        )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR044") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0167") (unit 1)
         )
       )
     )
@@ -2841,7 +2522,7 @@
     (property "Reference" "R81" (at 187.96 29.21 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "5.1k" (at 189.23 26.67 90)
+    (property "Value" "R" (at 189.23 26.67 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 189.23 28.448 90)
@@ -2860,8 +2541,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "R81") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "R81") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "R131") (unit 1)
         )
       )
     )
@@ -2870,7 +2551,7 @@
   (symbol (lib_id "power:GND") (at 45.72 171.45 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eb4a1c0b-d8e0-4653-93ef-44aaa530d1aa)
-    (property "Reference" "#PWR050" (at 39.37 171.45 0)
+    (property "Reference" "#PWR0174" (at 39.37 171.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 41.91 172.085 90)
@@ -2885,8 +2566,8 @@
     (pin "1" (uuid 9726139f-f302-415b-90a8-26a1cdc91e2e))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR050") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0174") (unit 1)
         )
       )
     )
@@ -2913,8 +2594,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0157") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR027") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0150") (unit 1)
         )
       )
     )
@@ -2923,7 +2604,7 @@
   (symbol (lib_id "power:+3.3V") (at 45.72 140.97 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f1a4df0d-c9dd-4c40-90a9-fb1cabf25622)
-    (property "Reference" "#PWR041" (at 49.53 140.97 0)
+    (property "Reference" "#PWR0171" (at 49.53 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (at 41.91 141.605 90)
@@ -2938,8 +2619,8 @@
     (pin "1" (uuid d7f1695e-ca10-4b30-a839-478f9f922fc2))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR041") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0171") (unit 1)
         )
       )
     )
@@ -2948,7 +2629,7 @@
   (symbol (lib_id "buttons:E-SWITCH 5501M") (at 52.07 100.33 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4b0a5dc-19f6-4e3e-8b32-37d44cbed214)
-    (property "Reference" "SW5" (at 53.975 82.55 0)
+    (property "Reference" "SW9" (at 53.975 82.55 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "E-SWITCH 5501M" (at 53.975 85.09 0)
@@ -2967,8 +2648,8 @@
     (pin "3" (uuid 069ddabf-4b5e-40a1-a90c-78ed93b12d4f))
     (instances
       (project "frankenstein_enlarger_controller"
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "SW5") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "SW9") (unit 1)
         )
       )
     )
@@ -2995,8 +2676,8 @@
         (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785"
           (reference "#PWR0168") (unit 1)
         )
-        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/82721b24-900b-41a1-b6f1-5534d2b77259"
-          (reference "#PWR021") (unit 1)
+        (path "/1ba54f55-ab1c-4f2f-aaa2-6abd42790785/25d199a9-36f3-4a21-b06a-3cf469daf5f8/c7860b1b-2d83-4a00-bcc0-5ed7f5d8df56"
+          (reference "#PWR0152") (unit 1)
         )
       )
     )
